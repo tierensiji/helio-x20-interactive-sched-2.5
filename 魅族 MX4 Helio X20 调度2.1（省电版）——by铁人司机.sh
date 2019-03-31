@@ -1,21 +1,18 @@
 su
-#2.1智能调度，360 n4 x20 仿魅族pro7H x30 调度移植版
+#2.1智能调度，魅族 MX4 x20调度 （360 N4 X20 调度修改版）
 #作者：铁人司机
-#开工时间：2019年3月31日 18:00
+#开工时间：2019年3月31日 19:50
 
 #开启热插拔
 echo 1 > /proc/hps/enabled
 #设定interactive为当前调度器
+chmod 0777 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+chmod 0777 /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+chmod 0777 /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
 echo interactive > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 echo interactive > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
 echo interactive > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
-echo interactive > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
-echo interactive > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
-echo interactive > /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor
-echo interactive > /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
-echo interactive > /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor
-echo interactive > /sys/devices/system/cpu/cpu8/cpufreq/scaling_governor
-echo interactive > /sys/devices/system/cpu/cpu9/cpufreq/scaling_governor
+chmod 0777 /sys/devices/system/cpu/power/autosuspend_delay_ms
 echo 100 > /sys/devices/system/cpu/power/autosuspend_delay_ms
 chmod 0777 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 echo 325000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
@@ -51,17 +48,12 @@ echo 40000 > /sys/devices/system/cpu/cpufreq/interactive/timer_rate
 chmod 0777 /sys/devices/system/cpu/cpufreq/io_is_busy
 echo 0 > /sys/devices/system/cpu/cpufreq/io_is_busy
 
-
-#开启hps_eas动态调节
-echo 1 > /proc/hps/eas_enabled
 #限制基本核心数量
 chmod 0666 /proc/hps/num_base_perf_serv
 echo "3 3 1" > /proc/hps/num_base_perf_serv
 #限制boost核心数量
 chmod 0666 /proc/hps/input_boost_cpu_num
-echo 8 > /proc/hps/input_boost_cpu_num
-chmod 0666 /proc/hps/big_task_enabled
-echo 1 > /proc/hps/big_task_enabled
+echo 1 > /proc/hps/input_boost_cpu_num
 chmod 0666 /proc/hps/heavy_task_enabled
 echo 1 > /proc/hps/heavy_task_enabled
 #设置降频阈值
@@ -91,16 +83,10 @@ echo 1 > /proc/hps/suspend_enabled
 echo 1 > /sys/power/autosleep
 echo 2000 > /sys/power/pm_freeze_timeout
 
-#修改动态机制
-echo 0 > /proc/cpufreq/cpufreq_sched_disable
-echo 0 > /proc/cpufreq/MT_CPU_DVFS_B/cpufreq_sched_disable
-echo 0 > /proc/cpufreq/MT_CPU_DVFS_CCL/cpufreq_sched_disable
-echo 0 > /proc/cpufreq/MT_CPU_DVFS_L/cpufreq_sched_disable
-echo 0 > /proc/cpufreq/MT_CPU_DVFS_LL/cpufreq_sched_disable
 #设置升频阈值
-chmod 0666 /proc/cpufreq/cpufreq_up_threshold_b
-chmod 0666 /proc/cpufreq/cpufreq_up_threshold_l
-chmod 0666 /proc/cpufreq/cpufreq_up_threshold_ll
+chmod 0777 /proc/cpufreq/cpufreq_up_threshold_b
+chmod 0777 /proc/cpufreq/cpufreq_up_threshold_l
+chmod 0777 /proc/cpufreq/cpufreq_up_threshold_ll
 echo 95 > /proc/cpufreq/cpufreq_up_threshold_b
 echo 95 > /proc/cpufreq/cpufreq_up_threshold_l
 echo 95 > /proc/cpufreq/cpufreq_up_threshold_ll
@@ -158,4 +144,4 @@ chmod 0666 /d/ged/hal/fps_upper_bound
 echo 60 > /d/ged/hal/fps_upper_bound
 
 #BY 铁人司机
-#完成日期：2019年3月31日 18:30
+#完成日期：2019年3月31日 20:00
