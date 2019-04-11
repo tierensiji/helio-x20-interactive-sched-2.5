@@ -144,18 +144,18 @@ chmod 0666 /proc/gpufreq/gpufreq_volt_enable
 chmod 0666 /proc/gpufreq/gpufreq_opp_max_freq
 chmod 0666 /proc/gpufreq/gpufreq_opp_freq
 chmod 0666 /proc/gpufreq/gpufreq_input_boost
-chmod 0666 /d/ged/hal/fps_upper_bound
 echo 1 > /proc/gpufreq/gpufreq_debug
 echo "0 0" > /proc/gpufreq/gpufreq_limited_low_batt_volt_ignore
 echo "0 0" > /proc/gpufreq/gpufreq_limited_low_batt_volume_ignore
-echo "3 442500" > /proc/gpufreq/gpufreq_limited_power
+echo "5 301500" > /proc/gpufreq/gpufreq_limited_power
 echo "0 0" > /proc/gpufreq/gpufreq_limited_thermal_ignore
 echo 1 > /proc/gpufreq/gpufreq_volt_enable
 echo 301500 > /proc/gpufreq/gpufreq_opp_max_freq
-echo 238000 > /proc/gpufreq/gpufreq_opp_freq
 echo 0 > /proc/gpufreq/gpufreq_opp_freq
+#echo 166000 > /proc/gpufreq/gpufreq_opp_freq
 echo 0 > /proc/gpufreq/gpufreq_input_boost
-echo 45 > /d/ged/hal/fps_upper_bound
+chmod 0666 /d/ged/hal/fps_upper_bound
+echo 60 > /d/ged/hal/fps_upper_bound
 
 #BY 铁人司机
 #完成日期：2019年3月31日 18:30
