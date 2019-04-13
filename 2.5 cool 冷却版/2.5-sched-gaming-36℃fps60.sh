@@ -14,8 +14,8 @@ echo "2 2" > /proc/ppm/policy/userlimit_max_cpu_core
 echo "0 221000" > /proc/ppm/policy/userlimit_min_cpu_freq
 echo "1 325000" > /proc/ppm/policy/userlimit_min_cpu_freq
 echo "2 304200" > /proc/ppm/policy/userlimit_min_cpu_freq
-echo "0 1222000" > /proc/ppm/policy/userlimit_max_cpu_freq
-echo "1 1703000" > /proc/ppm/policy/userlimit_max_cpu_freq
+echo "0 1339000" > /proc/ppm/policy/userlimit_max_cpu_freq
+echo "1 1781000" > /proc/ppm/policy/userlimit_max_cpu_freq
 echo "2 2106000" > /proc/ppm/policy/userlimit_max_cpu_freq
 
 #开启热插拔
