@@ -1,0 +1,16 @@
+echo 99 > /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
+echo "0 897000:45000 949000:51000 1118000:55000 1287000:61000 20000 949000:60000 1209000:150000 20000 1378000:60000 1677000:150000" > /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
+echo "60000 20000 20000" > /sys/devices/system/cpu/cpufreq/interactive/timer_rate
+echo "715000 676000 468000" > /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
+echo "80000 480000 80000" > /sys/devices/system/cpu/cpufreq/interactive/timer_slack
+echo "98 416000:68 559000:82 715000:72 897000:92 949000:83 1118000:99 1287000:75 1391000:99 98 468000:40 949000:80 1209000:95 1417000:75 1625000:99 98 676000:40 1378000:80 1677000:95 1989000:75 2119000:99 " > /sys/devices/system/cpu/cpufreq/interactive/target_loads
+echo "0 50000 50000" > /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
+echo 0 > /sys/devices/system/cpu/cpufreq/interactive/ignore_hispeed_on_notif
+echo 0 > /sys/devices/system/cpu/cpufreq/interactive/boost
+echo 0 > /sys/devices/system/cpu/cpufreq/interactive/fast_ramp_down
+echo 0 > /sys/devices/system/cpu/cpufreq/interactive/align_windows
+echo 1 > /sys/devices/system/cpu/cpufreq/interactive/use_migration_notif
+echo 0 > /sys/devices/system/cpu/cpufreq/interactive/use_sched_load
+echo 0 > /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis
+echo "0 80000 80000" > /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration
+echo 0 > /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
